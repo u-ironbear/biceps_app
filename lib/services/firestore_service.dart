@@ -1,5 +1,7 @@
 import 'package:biceps_app/models/article.dart';
 import 'package:biceps_app/models/exercise.dart';
+import 'package:biceps_app/models/program.dart';
+import 'package:biceps_app/models/training_day.dart';
 import 'package:biceps_app/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
@@ -15,10 +17,6 @@ class FirestoreService {
       Firestore.instance.collection('exercises');
   final CollectionReference _articlesCollectionReference =
       Firestore.instance.collection('articles');
-
-  static String certainProgram(String name) => '/programs/$name';
-  static String certainTrainingDay(String name, String day) =>
-      '/programs/$name/training_days/$day';
 
   Future createUser(User user) async {
     try {
@@ -66,7 +64,43 @@ class FirestoreService {
   }
 
   Future getPrograms() async {
-    //TODO Implement
+    try {
+      var programsDocument =
+          await _programsCollectionReference.orderBy('order').getDocuments();
+      if (programsDocument.documents.isNotEmpty) {
+        return programsDocument.documents
+            .map((snapshot) => Program.fromData(snapshot.data))
+            .toList();
+      }
+    } catch (err) {
+      if (err is PlatformException) {
+        return err.message;
+      }
+      return err.toString();
+    }
+  }
+
+  Future getTrainingDays(String code) async {
+    final CollectionReference trainingDaysCollectionReference = Firestore
+        .instance
+        .collection('programs')
+        .document(code)
+        .collection('training_days');
+
+    try {
+      var trainingDaysDocument =
+          await trainingDaysCollectionReference.getDocuments();
+      if (trainingDaysDocument.documents.isNotEmpty) {
+        return trainingDaysDocument.documents
+            .map((snapshot) => TrainingDay.fromData(snapshot.data))
+            .toList();
+      }
+    } catch (err) {
+      if (err is PlatformException) {
+        return err.message;
+      }
+      return err.toString();
+    }
   }
 
   Future getArticles() async {

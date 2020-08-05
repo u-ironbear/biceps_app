@@ -84,4 +84,8 @@ class HomeViewModel extends BaseViewModel {
     }
     notifyListeners();
   }
+
+  void navigateToStatistics() {
+    _navigationService.navigateTo(Routes.statisticsView);
+  }
 }

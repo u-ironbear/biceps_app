@@ -17,6 +17,11 @@ import 'package:biceps_app/models/article.dart';
 import 'package:biceps_app/ui/views/exercises_view/exercises_view.dart';
 import 'package:biceps_app/ui/widgets/single_exercise.dart';
 import 'package:biceps_app/models/exercise.dart';
+import 'package:biceps_app/ui/views/statistics_view/statistics_view.dart';
+import 'package:biceps_app/ui/views/single_program_view/single_program_view.dart';
+import 'package:biceps_app/models/program.dart';
+import 'package:biceps_app/ui/widgets/program_details.dart';
+import 'package:biceps_app/models/training_day.dart';
 
 class Routes {
   static const String startupView = '/';
@@ -27,6 +32,9 @@ class Routes {
   static const String singleArticle = '/single-article';
   static const String exercisesView = '/exercises-view';
   static const String singleExercise = '/single-exercise';
+  static const String statisticsView = '/statistics-view';
+  static const String singleProgramView = '/single-program-view';
+  static const String programDetails = '/program-details';
   static const all = <String>{
     startupView,
     introView,
@@ -36,6 +44,9 @@ class Routes {
     singleArticle,
     exercisesView,
     singleExercise,
+    statisticsView,
+    singleProgramView,
+    programDetails,
   };
 }
 
@@ -51,6 +62,9 @@ class Router extends RouterBase {
     RouteDef(Routes.singleArticle, page: SingleArticle),
     RouteDef(Routes.exercisesView, page: ExercisesView),
     RouteDef(Routes.singleExercise, page: SingleExercise),
+    RouteDef(Routes.statisticsView, page: StatisticsView),
+    RouteDef(Routes.singleProgramView, page: SingleProgramView),
+    RouteDef(Routes.programDetails, page: ProgramDetails),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -112,6 +126,33 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    StatisticsView: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => StatisticsView(),
+        settings: data,
+      );
+    },
+    SingleProgramView: (RouteData data) {
+      var args = data.getArgs<SingleProgramViewArguments>(
+          orElse: () => SingleProgramViewArguments());
+      return MaterialPageRoute<dynamic>(
+        builder: (context) =>
+            SingleProgramView(key: args.key, program: args.program),
+        settings: data,
+      );
+    },
+    ProgramDetails: (RouteData data) {
+      var args = data.getArgs<ProgramDetailsArguments>(
+          orElse: () => ProgramDetailsArguments());
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ProgramDetails(
+          key: args.key,
+          name: args.name,
+          trainingDays: args.trainingDays,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -138,4 +179,19 @@ class SingleExerciseArguments {
   final Key key;
   final Exercise exercise;
   SingleExerciseArguments({this.key, this.exercise});
+}
+
+//SingleProgramView arguments holder class
+class SingleProgramViewArguments {
+  final Key key;
+  final Program program;
+  SingleProgramViewArguments({this.key, this.program});
+}
+
+//ProgramDetails arguments holder class
+class ProgramDetailsArguments {
+  final Key key;
+  final String name;
+  final List<TrainingDay> trainingDays;
+  ProgramDetailsArguments({this.key, this.name, this.trainingDays});
 }

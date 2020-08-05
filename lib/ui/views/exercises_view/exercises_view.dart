@@ -18,7 +18,6 @@ class ExercisesView extends StatelessWidget {
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text(muscleGroup),
-          //TODO Вставить поиск (быть может, и на другие страницы также).
         ),
         body: Container(
           margin: EdgeInsets.symmetric(vertical: 10),
@@ -51,6 +50,7 @@ class ExercisesView extends StatelessWidget {
                           fontFamily: 'RobotoCondensed',
                         ),
                       ),
+                      subtitle: Text(model.exercises[index].type),
                       onTap: () => model.navigateToSingleExercise(index),
                     ),
                   ),

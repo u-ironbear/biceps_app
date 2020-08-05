@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Exercise {
   final String name;
+  final String type;
   final String muscleGroup;
   final String targetMuscles;
   final String additionalMuscles;
@@ -13,6 +14,7 @@ class Exercise {
 
   Exercise({
     @required this.name,
+    @required this.type,
     @required this.muscleGroup,
     @required this.targetMuscles,
     @required this.additionalMuscles,
@@ -25,6 +27,7 @@ class Exercise {
 
   Exercise.fromData(Map<String, dynamic> data)
       : name = data['name'],
+        type = data['type'],
         muscleGroup = data['muscle_group'],
         targetMuscles = data['target_muscles'],
         additionalMuscles = data['additional_muscles'],

@@ -1,36 +1,46 @@
 class Program {
-  final String descriptionUrl;
-  final String descriptionShort;
-  final String menWomen;
+  final String code;
+  final String name;
+  final int order;
+  final int split;
+  final String place;
+  final String goal;
+  final String description;
+  final String targetGender;
+  final int duration;
   final String trainingLevel;
   final bool isFree;
+  final String imageAsset;
+  final String videoAsset;
 
   Program({
-    this.descriptionUrl,
-    this.descriptionShort,
-    this.menWomen,
+    this.code,
+    this.name,
+    this.order,
+    this.split,
+    this.place,
+    this.goal,
+    this.description,
+    this.targetGender,
+    this.duration,
     this.trainingLevel,
     this.isFree,
+    this.imageAsset,
+    this.videoAsset,
   });
 
   Program.fromData(Map<String, dynamic> data)
-      : descriptionUrl = data['description_url'],
-        descriptionShort = data['description_short'],
-        menWomen = data['men_women'],
-        trainingLevel = data['training_level'],
-        isFree = data['is_free'];
-}
-
-class TrainingDay {
-  final String purpose;
-  final List<String> exercises;
-
-  TrainingDay({
-    this.purpose,
-    this.exercises,
-  });
-
-  TrainingDay.fromData(Map<String, dynamic> data)
-      : purpose = data['purpose'],
-        exercises = List.from(data['exercises']);
+      : code = data['code'],
+        name = data['name'],
+        order = data['order'],
+        split = data['split'],
+        place = data['place'],
+        goal = data['goal'],
+        description = data['description'],
+        targetGender = data['target_gender'],
+        duration = data['duration'],
+        trainingLevel = data['level'],
+        isFree = data['is_free'],
+        imageAsset = data['image_url'],
+        videoAsset = data['video_url'];
 }

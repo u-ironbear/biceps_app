@@ -33,6 +33,18 @@ class SignupViewModel extends BaseViewModel {
       _selectedGender = 'Мужской';
     }
 
+    int _numTrackRecord = int.parse(trackRecord);
+
+    if (_numTrackRecord <= 2) {
+      trackRecord = 'начальный';
+    } else if (_numTrackRecord <= 5) {
+      trackRecord = 'средний';
+    } else if (_numTrackRecord <= 10) {
+      trackRecord = 'высокий';
+    } else {
+      trackRecord = 'профи';
+    }
+
     var result = await _authenticationService.signUpWithEmail(
       email: email,
       password: password,

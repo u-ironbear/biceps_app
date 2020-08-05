@@ -5,10 +5,8 @@ DateFormat dateFormat = DateFormat('dd.MMM.yy');
 const String kAppName = 'Biceps Fitness';
 const String placeholderToken =
     'https://firebasestorage.googleapis.com/v0/b/biceps-training-app.appspot.com/o/portrait_placeholder.jpg?alt=media&token=8abbef61-2f03-4d01-a34c-93a551b4126b';
-
-//API keys
-const String kIosApiKey = '';
-const String kAndroidApiKey = '';
+const String introText =
+    'Я, Юрий Спасокукоцкий, имею честь предложить вашему вниманию программы тренинга, которые позволят любому из вас – независимо от пола, возраста и уровня подготовки – стать сильнее и обрести идеальную фигуру!';
 
 // Colors
 const kPrimaryDarkGrey = Color(0xFF484D63);
@@ -37,8 +35,43 @@ const kSmallHeader = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+const kSmallPlusHeader = TextStyle(
+  color: Colors.white,
+  fontSize: 22,
+  fontFamily: 'OpenSans',
+  fontWeight: FontWeight.w600,
+  shadows: [
+    Shadow(
+      blurRadius: 8,
+      color: Colors.black12,
+      offset: Offset(5, 5),
+    ),
+  ],
+);
+
+const kTinyHeader = TextStyle(
+  color: Colors.white,
+  fontSize: 16,
+  fontFamily: 'OpenSans',
+  fontWeight: FontWeight.w600,
+);
+
+const kTinyHeaderBlack = TextStyle(
+  color: Colors.black,
+  fontSize: 16,
+  fontFamily: 'OpenSans',
+  fontWeight: FontWeight.w600,
+);
+
 const kSmallHeaderDark = TextStyle(
   color: kPrimaryDarkGrey,
+  fontSize: 18,
+  fontFamily: 'OpenSans',
+  fontWeight: FontWeight.w400,
+);
+
+const kSmallHeaderLightGrey = TextStyle(
+  color: kPrimaryLightGrey,
   fontSize: 18,
   fontFamily: 'OpenSans',
   fontWeight: FontWeight.w400,
@@ -55,6 +88,13 @@ const kDrawerText = TextStyle(
   color: kPrimaryLightGrey,
   fontSize: 15,
   fontFamily: 'OpenSans',
+  fontWeight: FontWeight.w400,
+);
+
+const kSimpleTextWhite = TextStyle(
+  color: Colors.white,
+  fontSize: 15,
+  fontFamily: 'RobotoCondensed',
   fontWeight: FontWeight.w400,
 );
 
@@ -79,7 +119,7 @@ BoxDecoration fieldDecortaion = BoxDecoration(
   color: Colors.grey[200],
 );
 
-BoxDecoration disabledFieldDecortaion = BoxDecoration(
+BoxDecoration disabledFieldDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(5),
   color: Colors.grey[100],
 );

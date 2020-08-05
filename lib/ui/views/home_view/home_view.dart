@@ -72,7 +72,7 @@ class HomeView extends StatelessWidget {
                       ListTile(
                         leading: Icon(MdiIcons.fileChartOutline),
                         title: Text('Смотреть статистику'),
-                        onTap: null,
+                        onTap: model.navigateToStatistics,
                       ),
                       spacedDividerSmall,
                       ListTile(
