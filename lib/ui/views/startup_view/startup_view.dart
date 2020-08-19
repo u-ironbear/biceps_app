@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 
 class StartupView extends StatelessWidget {
+  //TODO Implement animation
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<StartupViewModel>.reactive(
@@ -15,11 +16,15 @@ class StartupView extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: SpinKitFadingCircle(
-            color: Colors.white,
-            size: 60,
-          ),
+        padding: EdgeInsets.only(bottom: 50),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SpinKitThreeBounce(
+              color: Colors.white,
+              size: 20,
+            ),
+          ],
         ),
       ),
       viewModelBuilder: () => StartupViewModel(),

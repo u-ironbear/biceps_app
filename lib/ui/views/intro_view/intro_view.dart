@@ -27,57 +27,59 @@ class IntroView extends StatelessWidget {
             ),
             alignment: Alignment.center,
             width: SizeConfig.screenWidth,
-            height: SizeConfig.safeBlockVertical * 42,
+            height: 330,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.white,
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Добро пожаловать!',
-                  style: kMediumHeaderDark,
-                ),
-                verticalSpaceMedium,
-                Container(
-                  child: Text(
-                    introText,
-                    textAlign: TextAlign.center,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Добро пожаловать!',
+                    style: kMediumHeaderDark,
                   ),
-                ),
-                verticalSpaceMedium,
-                GestureDetector(
-                  child: Container(
-                    constraints: BoxConstraints.expand(height: 40),
-                    decoration: BoxDecoration(
-                      color: kPrimaryAccent,
-                      borderRadius: BorderRadius.circular(5),
+                  verticalSpaceMedium,
+                  Container(
+                    child: Text(
+                      introText,
+                      textAlign: TextAlign.center,
                     ),
-                    child: Center(
-                      child: Text(
-                        'Зарегистрироваться',
-                        style: kButtonTitleTextStyle,
+                  ),
+                  verticalSpaceMedium,
+                  GestureDetector(
+                    child: Container(
+                      constraints: BoxConstraints.expand(height: 40),
+                      decoration: BoxDecoration(
+                        color: kPrimaryAccent,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Зарегистрироваться',
+                          style: kButtonTitleTextStyle,
+                        ),
                       ),
                     ),
+                    onTap: model.navigateToSignup,
                   ),
-                  onTap: model.navigateToSignup,
-                ),
-                verticalSpaceSmall,
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('Уже есть аккаунт?'),
-                    FlatButton(
-                      textColor: kPrimaryAccent,
-                      child: Text('Войти'),
-                      onPressed: model.navigateToLogin,
-                    ),
-                  ],
-                ),
-              ],
+                  verticalSpaceSmall,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('Уже есть аккаунт?'),
+                      FlatButton(
+                        textColor: kPrimaryAccent,
+                        child: Text('Войти'),
+                        onPressed: model.navigateToLogin,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

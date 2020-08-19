@@ -80,6 +80,10 @@ class FirestoreService {
     }
   }
 
+  Future updatePrograms(Program program) async {
+    //TODO Implement method
+  }
+
   Future getTrainingDays(String code) async {
     final CollectionReference trainingDaysCollectionReference = Firestore
         .instance

@@ -1,4 +1,9 @@
 class Program {
+  //TODO добавить свойство isAvailable; также и в Firestore
+  /// Свойство isAvailable меняется с true на false, если пользователь уже
+  /// выбрал эту программу. Также с его помощью можно контролировать
+  /// видимость (доступность) платных программ.
+  /// Строго говоря, этим свойством можно заменить isFree.
   final String code;
   final String name;
   final int order;

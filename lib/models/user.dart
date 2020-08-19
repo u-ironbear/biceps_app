@@ -7,6 +7,8 @@ class User {
   final String trackRecord;
   String avatar;
 
+  //TODO Возможно стоит добавить startDate
+
   User({
     this.id,
     this.email,

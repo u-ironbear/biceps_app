@@ -8,7 +8,12 @@ class CalculatorsView extends StatelessWidget {
     return ViewModelBuilder<CalculatorsViewModel>.reactive(
       builder: (context, model, child) => Container(
         child: Center(
-          child: Text('Calculators'),
+          child: Text(
+            'Здесь пока ничего нет',
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
       viewModelBuilder: () => CalculatorsViewModel(),
