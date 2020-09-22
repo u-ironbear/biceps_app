@@ -95,7 +95,20 @@ class SingleProgramView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onTap: model.sendProgramToDiary,
+                  onTap: () {
+                    var initDate = DateTime.now();
+                    showDatePicker(
+                      context: context,
+                      initialDate: initDate,
+                      firstDate: initDate.subtract(Duration(days: 30)),
+                      lastDate: initDate.add(Duration(days: 30)),
+                      locale: Locale('ru'),
+                      helpText: 'Введите дату начала',
+                      confirmText: 'Подтвердить',
+                      cancelText: 'Отменить',
+                    ).then((value) => initDate = value);
+                    model.sendProgramToDiary(initDate);
+                  },
                 ),
               ],
             ),

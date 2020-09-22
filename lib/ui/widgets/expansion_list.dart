@@ -39,7 +39,7 @@ class _ExpansionListState extends State<ExpansionList> {
       height: expanded
           ? expandedHeight
           : widget.smallVersion ? constants.smallFieldHeight : startingHeight,
-      decoration: constants.fieldDecortaion.copyWith(
+      decoration: constants.fieldDecoration.copyWith(
         boxShadow: expanded
             ? [BoxShadow(blurRadius: 10, color: Colors.grey[300])]
             : null,

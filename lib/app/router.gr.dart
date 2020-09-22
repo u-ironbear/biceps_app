@@ -22,6 +22,7 @@ import 'package:biceps_app/ui/views/single_program_view/single_program_view.dart
 import 'package:biceps_app/models/program.dart';
 import 'package:biceps_app/ui/widgets/program_details.dart';
 import 'package:biceps_app/models/training_day.dart';
+import 'package:biceps_app/ui/views/training_day_view/training_day_view.dart';
 
 class Routes {
   static const String startupView = '/';
@@ -35,6 +36,7 @@ class Routes {
   static const String statisticsView = '/statistics-view';
   static const String singleProgramView = '/single-program-view';
   static const String programDetails = '/program-details';
+  static const String trainingDayView = '/training-day-view';
   static const all = <String>{
     startupView,
     introView,
@@ -47,6 +49,7 @@ class Routes {
     statisticsView,
     singleProgramView,
     programDetails,
+    trainingDayView,
   };
 }
 
@@ -65,6 +68,7 @@ class Router extends RouterBase {
     RouteDef(Routes.statisticsView, page: StatisticsView),
     RouteDef(Routes.singleProgramView, page: SingleProgramView),
     RouteDef(Routes.programDetails, page: ProgramDetails),
+    RouteDef(Routes.trainingDayView, page: TrainingDayView),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -150,6 +154,12 @@ class Router extends RouterBase {
           name: args.name,
           trainingDays: args.trainingDays,
         ),
+        settings: data,
+      );
+    },
+    TrainingDayView: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => TrainingDayView(),
         settings: data,
       );
     },

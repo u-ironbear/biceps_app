@@ -51,11 +51,7 @@ class HomeView extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(
-                    top: 20,
-                    bottom: 40,
-                    left: 15,
-                  ),
+                  padding: EdgeInsets.only(top: 20, bottom: 40, left: 15),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
@@ -115,14 +111,6 @@ class HomeView extends StatelessWidget {
           onTap: model.setCurrentView,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(MdiIcons.textBoxOutline),
-              title: Text('Читать'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(MdiIcons.calculator),
-              title: Text('Считать'),
-            ),
-            BottomNavigationBarItem(
               icon: Icon(MdiIcons.calendarEdit),
               title: Text('Дневник'),
             ),
@@ -133,6 +121,14 @@ class HomeView extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(MdiIcons.fileMultipleOutline),
               title: Text('Программы'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(MdiIcons.textBoxOutline),
+              title: Text('Читать'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(MdiIcons.calculator),
+              title: Text('Считать'),
             ),
           ],
         ),

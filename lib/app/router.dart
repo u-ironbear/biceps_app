@@ -7,6 +7,7 @@ import 'package:biceps_app/ui/views/signup_view/signup_view.dart';
 import 'package:biceps_app/ui/views/single_program_view/single_program_view.dart';
 import 'package:biceps_app/ui/views/startup_view/startup_view.dart';
 import 'package:biceps_app/ui/views/statistics_view/statistics_view.dart';
+import 'package:biceps_app/ui/views/training_day_view/training_day_view.dart';
 import 'package:biceps_app/ui/widgets/program_details.dart';
 import 'package:biceps_app/ui/widgets/single_article.dart';
 import 'package:biceps_app/ui/widgets/single_exercise.dart';
@@ -23,5 +24,6 @@ import 'package:biceps_app/ui/widgets/single_exercise.dart';
   MaterialRoute(page: StatisticsView),
   MaterialRoute(page: SingleProgramView),
   MaterialRoute(page: ProgramDetails),
+  MaterialRoute(page: TrainingDayView),
 ])
 class $Router {}

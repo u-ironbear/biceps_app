@@ -25,14 +25,6 @@ class HomeViewModel extends BaseViewModel {
 
   List<Map<String, Object>> _views = [
     {
-      'title': 'Статьи и новости',
-      'view': ArticlesView(),
-    },
-    {
-      'title': 'Калькуляторы',
-      'view': CalculatorsView(),
-    },
-    {
       'title': 'Дневник',
       'view': DiaryView(),
     },
@@ -44,14 +36,23 @@ class HomeViewModel extends BaseViewModel {
       'title': 'Программы тренинга',
       'view': ProgramsView(),
     },
+    {
+      'title': 'Статьи и новости',
+      'view': ArticlesView(),
+    },
+    {
+      'title': 'Калькуляторы',
+      'view': CalculatorsView(),
+    },
   ];
+
   List<Map<String, Object>> get views => _views;
 
   int _currentIndex = 0;
   int get currentIndex => _currentIndex;
-  String _currentTitle = 'Статьи и новости';
+  String _currentTitle = 'Дневник';
   String get currentTitle => _currentTitle;
-  Widget currentView = ArticlesView();
+  Widget currentView = DiaryView();
 
   void setCurrentView(index) {
     _currentIndex = index;

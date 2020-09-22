@@ -1,5 +1,6 @@
 import 'package:biceps_app/ui/shared/constants.dart';
 import 'package:biceps_app/ui/shared/sizes.dart';
+import 'package:biceps_app/ui/shared/texts.dart';
 import 'package:biceps_app/ui/shared/ui_helpers.dart';
 import 'package:biceps_app/ui/views/intro_view/intro_viewmodel.dart';
 import 'package:flutter/material.dart';

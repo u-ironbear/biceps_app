@@ -5,8 +5,6 @@ DateFormat dateFormat = DateFormat('dd.MMM.yy');
 const String kAppName = 'Biceps Fitness';
 const String placeholderToken =
     'https://firebasestorage.googleapis.com/v0/b/biceps-training-app.appspot.com/o/portrait_placeholder.jpg?alt=media&token=8abbef61-2f03-4d01-a34c-93a551b4126b';
-const String introText =
-    'Я, Юрий Спасокукоцкий, имею честь предложить вашему вниманию программы тренинга, которые позволят любому из вас – независимо от пола, возраста и уровня подготовки – стать сильнее и обрести идеальную фигуру!';
 
 // Colors
 const kPrimaryDarkGrey = Color(0xFF484D63);
@@ -114,7 +112,7 @@ const EdgeInsets largeFieldPadding = const EdgeInsets.symmetric(
 
 // Box Decorations
 
-BoxDecoration fieldDecortaion = BoxDecoration(
+BoxDecoration fieldDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(5),
   color: Colors.grey[200],
 );

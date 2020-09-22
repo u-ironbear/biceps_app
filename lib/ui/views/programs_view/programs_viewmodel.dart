@@ -31,7 +31,7 @@ class ProgramsViewModel extends BaseViewModel {
     }
   }
 
-  Future navigateToSingleProgram(index) async {
+  navigateToSingleProgram(index) {
     arguments = SingleProgramViewArguments(program: _programs[index]);
     _navigationService.navigateTo(
       Routes.singleProgramView,

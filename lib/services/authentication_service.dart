@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 @lazySingleton
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final _firestoreService = locator<FirestoreService>();
+  final FirestoreService _firestoreService = locator<FirestoreService>();
 
   User _currentUser;
   User get currentUser => _currentUser;

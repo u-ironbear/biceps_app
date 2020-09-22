@@ -44,6 +44,8 @@ dependencies:
   firebase_storage: ^3.1.6
   hive: ^1.4.2
   hive_flutter: ^0.3.1
+  path_provider: ^1.6.11
+  shared_preferences: ^0.5.10
 
   # Customization and others
   material_design_icons_flutter: ^4.0.5345
